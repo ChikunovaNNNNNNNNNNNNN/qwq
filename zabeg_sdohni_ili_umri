@@ -233,6 +233,9 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.banan44.clicked.connect(self.but)
 
     def but(self):
+        self.ab = 0
+        self.shaurma = 0
+
         self.banan55.setVisible(False)
         self.banan44.setVisible(False)
 
@@ -246,7 +249,23 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.button8.setVisible(True)
         self.button9.setVisible(True)
 
+        self.kub = [self.button1,
+                    self.button2,
+                    self.button3,
+                    self.button4,
+                    self.button5,
+                    self.button6,
+                    self.button7,
+                    self.button8,
+                    self.button9]
+        for i in self.kub:
+            i.clicked.connect(self.zubochistka)
+        self.i = i
+
     def kur(self):
+        self.ab = 0
+        self.shaurma = 0
+
         self.banan55.setVisible(False)
         self.banan44.setVisible(False)
 
@@ -266,6 +285,50 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.kurva14.setVisible(True)
         self.kurva15.setVisible(True)
         self.kurva16.setVisible(True)
+
+        self.kub = [self.kurva1,
+                    self.kurva2,
+                    self.kurva3,
+                    self.kurva4,
+                    self.kurva5,
+                    self.kurva6,
+                    self.kurva7,
+                    self.kurva8,
+                    self.kurva9,
+                    self.kurva10,
+                    self.kurva11,
+                    self.kurva12,
+                    self.kurva13,
+                    self.kurva14,
+                    self.kurva15,
+                    self.kurva16]
+
+        for i in self.kub:
+            i.clicked.connect(self.zubochistka)
+        self.i = i
+
+    def zubochistka(self):
+
+        self.shaurma += 1
+
+        if self.ab == 0:
+            self._.setText("X")
+            self.ab = 1
+        else:
+            self._.setText("O")
+            self.ab = 0
+        print('010')
+
+    def loshad(self):
+        self.shaurma += 1
+
+        if self.ab == 0:
+            self._.setText("X")
+            self.ab = 1
+        else:
+            self._.setText("O")
+            self.ab = 0
+        print('010')
 
 
 if __name__ == '__main__':
