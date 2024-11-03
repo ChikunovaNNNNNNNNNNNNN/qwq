@@ -1,1 +1,85 @@
-тут скоро наверное будет код, но может не на этой неделе, но будет, прям точно точно
+import sys
+
+from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QRadioButton
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
+from PyQt5 import QtCore
+
+d = 100
+
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        ss = 0
+
+        self.aaa = QRadioButton('', self)
+        icon = QIcon('C:/Users/Andrey/Desktop/sticker.png')
+        self.aaa.move(50, 50)
+        self.aaa.setIcon(icon)
+        self.aaa.setVisible(False)
+
+        self.setGeometry(300, 300, 300, 200)
+        self.setWindowTitle('Сдохни или умри')
+
+        self.button_2 = QPushButton(self)
+        self.button_2.move(90, 20)
+        self.button_2.setText("Играть")
+        self.button_2.clicked.connect(self.buttonn_2)
+
+        self.banan1 = QPushButton(self)
+        self.banan1.move(0, 80)
+        self.banan1.setText("Cкин А")
+
+        self.banan1.clicked.connect(self.q)
+
+        self.banan2 = QPushButton(self)
+        self.banan2.move(90, 80)
+        self.banan2.setText("Cкин Б")
+        self.banan2.clicked.connect(self.q)
+
+        self.banan3 = QPushButton(self)
+        self.banan3.move(180, 80)
+        self.banan3.setText("Cкин В")
+        self.banan3.clicked.connect(self.q)
+
+        if ss == 1:
+            self.banan3.setEnabled(True)
+            self.banan2.setEnabled(True)
+            self.banan1.setEnabled(True)
+        else:
+            self.banan3.setEnabled(False)
+            self.banan2.setEnabled(False)
+            self.banan1.setEnabled(False)
+        print(ss)
+
+    def buttonn_2(self):
+        self.button_2.deleteLater()
+        ss = 1
+        print(ss)
+        self.banan(ss)
+
+    def banan(self, ss):
+        if ss == 1:
+            self.banan3.setEnabled(True)
+            self.banan2.setEnabled(True)
+            self.banan1.setEnabled(True)
+        else:
+            self.banan3.setEnabled(False)
+            self.banan2.setEnabled(False)
+            self.banan1.setEnabled(False)
+        print(ss)
+
+    def q(self):
+        self.aaa.setVisible(True)
+        print(8)
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    ex.show()
+    sys.exit(app.exec())
