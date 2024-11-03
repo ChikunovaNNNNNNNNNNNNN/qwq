@@ -12,18 +12,27 @@ class Example(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
+        self.setFixedSize(280, 300)
+        self.setGeometry(300, 300, 300, 200)
+        self.setWindowTitle('Сдохни или умри')
+
+        self.layout = QHBoxLayout(self)
 
     def initUI(self):
         ss = 0
 
         self.aaa = QRadioButton('', self)
-        icon = QIcon('C:/Users/Andrey/Desktop/sticker.png')
-        self.aaa.move(50, 50)
-        self.aaa.setIcon(icon)
+        self.aaa.move(50, 10)
         self.aaa.setVisible(False)
 
-        self.setGeometry(300, 300, 300, 200)
-        self.setWindowTitle('Сдохни или умри')
+        self.sss = QRadioButton('', self)
+        self.sss.move(200, 10)
+        self.sss.setVisible(False)
+
+        self.pr = QPushButton(self)
+        self.pr.move(90, 20)
+        self.pr.setText("Продолжить")
+        self.pr.setVisible(False)
 
         self.button_2 = QPushButton(self)
         self.button_2.move(90, 20)
@@ -39,21 +48,33 @@ class Example(QWidget):
         self.banan2 = QPushButton(self)
         self.banan2.move(90, 80)
         self.banan2.setText("Cкин Б")
-        self.banan2.clicked.connect(self.q)
+        self.banan2.clicked.connect(self.w)
 
         self.banan3 = QPushButton(self)
         self.banan3.move(180, 80)
         self.banan3.setText("Cкин В")
-        self.banan3.clicked.connect(self.q)
+        self.banan3.clicked.connect(self.e)
+
+        self.banan44 = QPushButton(self)
+        self.banan44.move(0, 120)
+        self.banan44.setText("Поле 3х3")
+        self.banan44.setVisible(False)
+
+        self.banan55 = QPushButton(self)
+        self.banan55.move(180, 120)
+        self.banan55.setText("Поле 4х4")
+        self.banan55.setVisible(False)
 
         if ss == 1:
             self.banan3.setEnabled(True)
             self.banan2.setEnabled(True)
             self.banan1.setEnabled(True)
+
         else:
             self.banan3.setEnabled(False)
             self.banan2.setEnabled(False)
             self.banan1.setEnabled(False)
+
         print(ss)
 
     def buttonn_2(self):
@@ -67,15 +88,65 @@ class Example(QWidget):
             self.banan3.setEnabled(True)
             self.banan2.setEnabled(True)
             self.banan1.setEnabled(True)
+
         else:
             self.banan3.setEnabled(False)
             self.banan2.setEnabled(False)
             self.banan1.setEnabled(False)
+
         print(ss)
 
     def q(self):
+        self.pr.setVisible(True)
+        self.pr.clicked.connect(self.prr)
+        print(99)
+
         self.aaa.setVisible(True)
+        icon = QIcon('C:/Users/Andrey/Desktop/sticker.png')
+        self.aaa.setIcon(icon)
+
+        self.sss.setVisible(True)
+        icon = QIcon('C:/Users/Andrey/Desktop/шаурмама.webp')
+        self.sss.setIcon(icon)
+
         print(8)
+
+    def w(self):
+        self.pr.setVisible(True)
+        self.pr.clicked.connect(self.prr)
+        print(99)
+
+        self.aaa.setVisible(True)
+        icon = QIcon('C:/Users/Andrey/Desktop/sticker0.webp')
+        self.aaa.setIcon(icon)
+
+        self.sss.setVisible(True)
+        icon = QIcon('C:/Users/Andrey/Desktop/шаурма.png')
+        self.sss.setIcon(icon)
+        print(8)
+
+    def e(self):
+        self.pr.setVisible(True)
+        self.pr.clicked.connect(self.prr)
+        print(99)
+
+        self.aaa.setVisible(True)
+        icon = QIcon('C:/Users/Andrey/Desktop/stickerr.png')
+        self.aaa.setIcon(icon)
+
+        self.sss.setVisible(True)
+        icon = QIcon('C:/Users/Andrey/Desktop/шаурма1.png')
+        self.sss.setIcon(icon)
+        print(8)
+
+    def prr(self):
+        self.banan55.setVisible(True)
+        self.banan44.setVisible(True)
+        self.pr.setVisible(False)
+
+        self.banan1.setVisible(False)
+        self.banan2.setVisible(False)
+        self.banan3.setVisible(False)
 
 
 if __name__ == '__main__':
