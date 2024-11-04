@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QRadioButton
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
-from PyQt5 import QtCore
+
 
 d = 100
 
@@ -21,56 +21,56 @@ class Raspili_menya_bolgarkoj(QWidget):
     def initUI(self):
         ss = 0
 
-        self.button1 = QPushButton('1', self)
+        self.button1 = QPushButton('', self)
         self.button1.setGeometry(40, 70, 50, 50)
-        self.button2 = QPushButton('2', self)
+        self.button2 = QPushButton('', self)
         self.button2.setGeometry(110, 70, 50, 50)
-        self.button3 = QPushButton('3', self)
+        self.button3 = QPushButton('', self)
         self.button3.setGeometry(180, 70, 50, 50)
-        self.button4 = QPushButton('4', self)
+        self.button4 = QPushButton('', self)
         self.button4.setGeometry(40, 130, 50, 50)
-        self.button5 = QPushButton('5', self)
+        self.button5 = QPushButton('', self)
         self.button5.setGeometry(110, 130, 50, 50)
-        self.button6 = QPushButton('6', self)
+        self.button6 = QPushButton('', self)
         self.button6.setGeometry(180, 130, 50, 50)
-        self.button7 = QPushButton('7', self)
+        self.button7 = QPushButton('', self)
         self.button7.setGeometry(40, 190, 50, 50)
-        self.button8 = QPushButton('8', self)
+        self.button8 = QPushButton('', self)
         self.button8.setGeometry(110, 190, 50, 50)
-        self.button9 = QPushButton('9', self)
+        self.button9 = QPushButton('', self)
         self.button9.setGeometry(180, 190, 50, 50)
 
-        self.kurva1 = QPushButton('1', self)
+        self.kurva1 = QPushButton('', self)
         self.kurva1.setGeometry(30, 70, 50, 50)
-        self.kurva2 = QPushButton('2', self)
+        self.kurva2 = QPushButton('', self)
         self.kurva2.setGeometry(90, 70, 50, 50)
-        self.kurva3 = QPushButton('3', self)
+        self.kurva3 = QPushButton('', self)
         self.kurva3.setGeometry(150, 70, 50, 50)
-        self.kurva4 = QPushButton('4', self)
+        self.kurva4 = QPushButton('', self)
         self.kurva4.setGeometry(210, 70, 50, 50)
-        self.kurva5 = QPushButton('5', self)
+        self.kurva5 = QPushButton('', self)
         self.kurva5.setGeometry(30, 130, 50, 50)
-        self.kurva6 = QPushButton('6', self)
+        self.kurva6 = QPushButton('', self)
         self.kurva6.setGeometry(90, 130, 50, 50)
-        self.kurva7 = QPushButton('7', self)
+        self.kurva7 = QPushButton('', self)
         self.kurva7.setGeometry(150, 130, 50, 50)
-        self.kurva8 = QPushButton('8', self)
+        self.kurva8 = QPushButton('', self)
         self.kurva8.setGeometry(210, 130, 50, 50)
-        self.kurva9 = QPushButton('9', self)
+        self.kurva9 = QPushButton('', self)
         self.kurva9.setGeometry(30, 190, 50, 50)
-        self.kurva10 = QPushButton('10', self)
+        self.kurva10 = QPushButton('', self)
         self.kurva10.setGeometry(90, 190, 50, 50)
-        self.kurva11 = QPushButton('11', self)
+        self.kurva11 = QPushButton('', self)
         self.kurva11.setGeometry(150, 190, 50, 50)
-        self.kurva12 = QPushButton('12', self)
+        self.kurva12 = QPushButton('', self)
         self.kurva12.setGeometry(210, 190, 50, 50)
-        self.kurva13 = QPushButton('13', self)
+        self.kurva13 = QPushButton('', self)
         self.kurva13.setGeometry(30, 250, 50, 50)
-        self.kurva14 = QPushButton('14', self)
+        self.kurva14 = QPushButton('', self)
         self.kurva14.setGeometry(90, 250, 50, 50)
-        self.kurva15 = QPushButton('15', self)
+        self.kurva15 = QPushButton('', self)
         self.kurva15.setGeometry(150, 250, 50, 50)
-        self.kurva16 = QPushButton('16', self)
+        self.kurva16 = QPushButton('', self)
         self.kurva16.setGeometry(210, 250, 50, 50)
 
         self.button1.setVisible(False)
@@ -184,10 +184,12 @@ class Raspili_menya_bolgarkoj(QWidget):
 
         self.aaa.setVisible(True)
         icon = QIcon('C:/Users/Andrey/Desktop/sticker.png')
+        self.ab = icon
         self.aaa.setIcon(icon)
 
         self.sss.setVisible(True)
         icon = QIcon('C:/Users/Andrey/Desktop/шаурмама.webp')
+        self.shaur = icon
         self.sss.setIcon(icon)
 
         print(8)
@@ -200,24 +202,29 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.aaa.setVisible(True)
         icon = QIcon('C:/Users/Andrey/Desktop/sticker0.webp')
         self.aaa.setIcon(icon)
+        self.ab = icon
 
         self.sss.setVisible(True)
         icon = QIcon('C:/Users/Andrey/Desktop/шаурма.png')
         self.sss.setIcon(icon)
+        self.shaur = icon
         print(8)
 
     def e(self):
         self.pr.setVisible(True)
         self.pr.clicked.connect(self.prr)
+
         print(99)
 
         self.aaa.setVisible(True)
         icon = QIcon('C:/Users/Andrey/Desktop/stickerr.png')
         self.aaa.setIcon(icon)
+        self.ab = icon
 
         self.sss.setVisible(True)
         icon = QIcon('C:/Users/Andrey/Desktop/шаурма1.png')
         self.sss.setIcon(icon)
+        self.shaur = icon
         print(8)
 
     def prr(self):
@@ -233,8 +240,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.banan44.clicked.connect(self.but)
 
     def but(self):
-        self.ab = 0
-        self.shaurma = 0
+        self.a = 0
 
         self.banan55.setVisible(False)
         self.banan44.setVisible(False)
@@ -249,24 +255,18 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.button8.setVisible(True)
         self.button9.setVisible(True)
 
-        self.kub = [self.button1,
-                    self.button2,
-                    self.button3,
-                    self.button4,
-                    self.button5,
-                    self.button6,
-                    self.button7,
-                    self.button8,
-                    self.button9
-                    ]
-
-        for i in self.kub:
-            i.clicked.connect(self.loshad)
-        self.i = i
+        self.button9.clicked.connect(lambda: self.zubochistka(9))
+        self.button8.clicked.connect(lambda: self.zubochistka(8))
+        self.button7.clicked.connect(lambda: self.zubochistka(7))
+        self.button6.clicked.connect(lambda: self.zubochistka(6))
+        self.button5.clicked.connect(lambda: self.zubochistka(5))
+        self.button4.clicked.connect(lambda: self.zubochistka(4))
+        self.button3.clicked.connect(lambda: self.zubochistka(3))
+        self.button2.clicked.connect(lambda: self.zubochistka(2))
+        self.button1.clicked.connect(lambda: self.zubochistka(1))
 
     def kur(self):
-        self.ab = 0
-        self.shaurma = 0
+        self.a = 0
 
         self.banan55.setVisible(False)
         self.banan44.setVisible(False)
@@ -288,31 +288,45 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.kurva15.setVisible(True)
         self.kurva16.setVisible(True)
 
-        self.kub = [self.kurva1,
-                    self.kurva2,
-                    self.kurva3,
-                    self.kurva4,
-                    self.kurva5,
-                    self.kurva6,
-                    self.kurva7,
-                    self.kurva8,
-                    self.kurva9,
-                    self.kurva10,
-                    self.kurva11,
-                    self.kurva12,
-                    self.kurva13,
-                    self.kurva14,
-                    self.kurva15,
-                    self.kurva16]
+        self.kurva1.clicked.connect(lambda: self.loshad(1))
+        self.kurva2.clicked.connect(lambda: self.loshad(2))
+        self.kurva3.clicked.connect(lambda: self.loshad(3))
+        self.kurva4.clicked.connect(lambda: self.loshad(4))
+        self.kurva5.clicked.connect(lambda: self.loshad(5))
+        self.kurva6.clicked.connect(lambda: self.loshad(6))
+        self.kurva7.clicked.connect(lambda: self.loshad(7))
+        self.kurva8.clicked.connect(lambda: self.loshad(8))
+        self.kurva9.clicked.connect(lambda: self.loshad(9))
+        self.kurva10.clicked.connect(lambda: self.loshad(10))
+        self.kurva11.clicked.connect(lambda: self.loshad(11))
+        self.kurva12.clicked.connect(lambda: self.loshad(12))
+        self.kurva13.clicked.connect(lambda: self.loshad(13))
+        self.kurva14.clicked.connect(lambda: self.loshad(14))
+        self.kurva15.clicked.connect(lambda: self.loshad(15))
+        self.kurva16.clicked.connect(lambda: self.loshad(16))
 
-        for i in self.kub:
-            i.clicked.connect(self.zubochistka)
-        self.i = i
+    def zubochistka(self, k):
+        if self.a == 0:
+            exec(f'self.button{k}.setIcon(QtGui.QIcon(self.ab))')
+            exec(f'self.button{k}.setIconSize(QtCore.QSize(25, 25))')
 
-    def zubochistka(self):
+            self.a = 1
+        else:
+            exec(f'self.button{k}.setIcon(QtGui.QIcon(self.shaur))')
+            exec(f'self.button{k}.setIconSize(QtCore.QSize(25, 25))')
+            self.a = 0
         print('010')
 
-    def loshad(self):
+    def loshad(self, k):
+        if self.a == 0:
+            exec(f'self.kurva{k}.setIcon(QtGui.QIcon(self.ab))')
+            exec(f'self.kurva{k}.setIconSize(QtCore.QSize(25, 25))')
+
+            self.a = 1
+        else:
+            exec(f'self.kurva{k}.setIcon(QtGui.QIcon(self.shaur))')
+            exec(f'self.kurva{k}.setIconSize(QtCore.QSize(25, 25))')
+            self.a = 0
         print('010')
 
 
