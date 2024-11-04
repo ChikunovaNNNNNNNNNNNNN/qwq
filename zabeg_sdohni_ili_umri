@@ -3,7 +3,8 @@ import sys
 from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QRadioButton
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
-
+from PyQt5 import QtCore
+from PyQt5 import QtGui, QtCore
 
 d = 100
 
