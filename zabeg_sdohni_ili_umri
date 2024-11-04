@@ -257,9 +257,11 @@ class Raspili_menya_bolgarkoj(QWidget):
                     self.button6,
                     self.button7,
                     self.button8,
-                    self.button9]
+                    self.button9
+                    ]
+
         for i in self.kub:
-            i.clicked.connect(self.zubochistka)
+            i.clicked.connect(self.loshad)
         self.i = i
 
     def kur(self):
@@ -308,26 +310,9 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.i = i
 
     def zubochistka(self):
-
-        self.shaurma += 1
-
-        if self.ab == 0:
-            self._.setText("X")
-            self.ab = 1
-        else:
-            self._.setText("O")
-            self.ab = 0
         print('010')
 
     def loshad(self):
-        self.shaurma += 1
-
-        if self.ab == 0:
-            self._.setText("X")
-            self.ab = 1
-        else:
-            self._.setText("O")
-            self.ab = 0
         print('010')
 
 
