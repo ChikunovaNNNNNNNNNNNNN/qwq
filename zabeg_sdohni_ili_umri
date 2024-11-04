@@ -21,7 +21,6 @@ class Raspili_menya_bolgarkoj(QWidget):
 
     def initUI(self):
         ss = 0
-
         self.button1 = QPushButton('', self)
         self.button1.setGeometry(40, 70, 50, 50)
         self.button2 = QPushButton('', self)
