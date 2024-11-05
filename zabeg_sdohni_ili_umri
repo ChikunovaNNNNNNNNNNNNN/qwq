@@ -39,6 +39,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.button8.setGeometry(110, 190, 50, 50)
         self.button9 = QPushButton('', self)
         self.button9.setGeometry(180, 190, 50, 50)
+        # кнопки окна 3х3
 
         self.kurva1 = QPushButton('', self)
         self.kurva1.setGeometry(30, 70, 50, 50)
@@ -72,6 +73,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.kurva15.setGeometry(150, 250, 50, 50)
         self.kurva16 = QPushButton('', self)
         self.kurva16.setGeometry(210, 250, 50, 50)
+        # кнопки окна 4х4
 
         self.button1.setVisible(False)
         self.button2.setVisible(False)
@@ -99,41 +101,47 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.kurva14.setVisible(False)
         self.kurva15.setVisible(False)
         self.kurva16.setVisible(False)
-
-        self.kurva16.setGeometry(210, 250, 50, 50)
+        # делаем их не видимыми
 
         self.aaa = QRadioButton('', self)
         self.aaa.move(50, 10)
         self.aaa.setVisible(False)
+        # скрытый выбор скина аб
 
         self.sss = QRadioButton('', self)
         self.sss.move(200, 10)
         self.sss.setVisible(False)
+        # скрытый выбор скина шаурмы
 
         self.pr = QPushButton(self)
         self.pr.move(90, 20)
         self.pr.setText("Продолжить")
         self.pr.setVisible(False)
+        # скрытая кнопка продолжения
 
         self.button_2 = QPushButton(self)
         self.button_2.move(90, 20)
         self.button_2.setText("Играть")
         self.button_2.clicked.connect(self.buttonn_2)
+        # кнопка начала
 
         self.banan1 = QPushButton(self)
         self.banan1.move(0, 80)
         self.banan1.setText("Cкин А")
+        # 1аб + 1шаурма
 
         self.banan1.clicked.connect(self.q)
 
         self.banan2 = QPushButton(self)
         self.banan2.move(90, 80)
         self.banan2.setText("Cкин Б")
+        # 2аб + 2шаурма
         self.banan2.clicked.connect(self.w)
 
         self.banan3 = QPushButton(self)
         self.banan3.move(180, 80)
         self.banan3.setText("Cкин В")
+        # 3аб + 3шаурма
         self.banan3.clicked.connect(self.e)
 
         self.banan44 = QPushButton(self)
@@ -145,6 +153,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.banan55.move(180, 120)
         self.banan55.setText("Поле 4х4")
         self.banan55.setVisible(False)
+        # выбор размера поля
 
         if ss == 1:
             self.banan3.setEnabled(True)
@@ -155,7 +164,7 @@ class Raspili_menya_bolgarkoj(QWidget):
             self.banan3.setEnabled(False)
             self.banan2.setEnabled(False)
             self.banan1.setEnabled(False)
-
+        # видимость
         print(ss)
 
     def buttonn_2(self):
@@ -191,6 +200,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         icon = QIcon('C:/Users/Andrey/Desktop/шаурмама.webp')
         self.shaur = icon
         self.sss.setIcon(icon)
+        # иконки для выбора скина
 
         print(8)
 
@@ -235,6 +245,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.banan1.setVisible(False)
         self.banan2.setVisible(False)
         self.banan3.setVisible(False)
+        # сокрытие
 
         self.banan55.clicked.connect(self.kur)
         self.banan44.clicked.connect(self.but)
@@ -254,6 +265,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.button7.setVisible(True)
         self.button8.setVisible(True)
         self.button9.setVisible(True)
+        # открытие 3х3
 
         self.button9.clicked.connect(lambda: self.zubochistka(9))
         self.button8.clicked.connect(lambda: self.zubochistka(8))
@@ -287,6 +299,7 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.kurva14.setVisible(True)
         self.kurva15.setVisible(True)
         self.kurva16.setVisible(True)
+        # открытие 4х4
 
         self.kurva1.clicked.connect(lambda: self.loshad(1))
         self.kurva2.clicked.connect(lambda: self.loshad(2))
@@ -309,11 +322,13 @@ class Raspili_menya_bolgarkoj(QWidget):
         if self.a == 0:
             exec(f'self.button{k}.setIcon(QtGui.QIcon(self.ab))')
             exec(f'self.button{k}.setIconSize(QtCore.QSize(25, 25))')
+            # символ "крестика"
 
             self.a = 1
         else:
             exec(f'self.button{k}.setIcon(QtGui.QIcon(self.shaur))')
             exec(f'self.button{k}.setIconSize(QtCore.QSize(25, 25))')
+            # символ "нолика"
             self.a = 0
         print('010')
 
