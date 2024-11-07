@@ -3,8 +3,11 @@ import sys
 from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QRadioButton
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
+from PyQt5.QtMultimedia import *
+from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtCore
 from PyQt5 import QtGui, QtCore
+import pygame
 
 d = 100
 
@@ -15,7 +18,10 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.initUI()
         self.setFixedSize(280, 300)
         self.setGeometry(300, 300, 300, 200)
-        self.setWindowTitle('Сдохни или умри')
+        self.setWindowTitle('АБ vs Шаурма')
+        pygame.mixer.init()
+        pygame.mixer.music.load("C:/Users/Andrey/Desktop/und.mp3")
+        pygame.mixer.music.play()
 
         self.layout = QHBoxLayout(self)
 
