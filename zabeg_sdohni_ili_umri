@@ -1,14 +1,18 @@
 import sys
 
-from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QRadioButton
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon
-from PyQt5.QtMultimedia import *
-from PyQt5.QtMultimediaWidgets import *
-from PyQt5 import QtCore
-from PyQt5 import QtGui, QtCore
+from PyQt6.QtWidgets import QWidget, QApplication, QPushButton, QLabel, QRadioButton
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import QIcon
+from PyQt6.QtMultimedia import *
+from PyQt6.QtMultimediaWidgets import *
+from PyQt6 import QtCore
+from PyQt6 import QtGui, QtCore
 import pygame
 from PyQt6.QtCore import QUrl, Qt
+
+import sys
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QMainWindow, QApplication, QLabel
 
 d = 100
 
@@ -16,18 +20,43 @@ d = 100
 class Raspili_menya_bolgarkoj(QWidget):
     def __init__(self):
         super().__init__()
+
         self.initUI()
+
         self.setFixedSize(280, 300)
         self.setGeometry(300, 300, 300, 200)
         self.setWindowTitle('АБ vs Шаурма')
+
         pygame.mixer.init()
         pygame.mixer.music.load("C:/Users/Andrey/Desktop/und.mp3")
         pygame.mixer.music.play()
+
+        self.setStyleSheet("""
+                    QWidget {
+                        background-color: #333333;
+                        color: #ffffff;
+                    }
+                    QPushButton {
+                        background-color: #2a4238;
+                        color: #ffffff;
+                        border: none;
+                        padding: 5px;
+                    }
+                    QPushButton:hover {
+                        background-color: #7b917b;
+                    }
+                """)
 
         self.layout = QHBoxLayout(self)
 
     def initUI(self):
         ss = 0
+        label = QLabel(self)
+        pixmap = QPixmap('C:/Users/Andrey/Desktop/фон1.gif')
+        label.setGeometry(0, 0, 280, 300)
+        label.setPixmap(pixmap)
+        label.setScaledContents(True)
+
         self.button1 = QPushButton('', self)
         self.button1.setGeometry(40, 70, 50, 50)
         self.button2 = QPushButton('', self)
@@ -351,6 +380,9 @@ class Raspili_menya_bolgarkoj(QWidget):
         self.kurva16.clicked.connect(lambda: self.loshad(16))
 
     def zubochistka(self, k):
+        pygame.mixer.music.load("C:/Users/Andrey/Desktop/tresk.mp3")
+        pygame.mixer.music.play()
+
         if self.a == 0:
             exec(f'self.button{k}.setIcon(QtGui.QIcon(self.ab))')
             exec(f'self.button{k}.setIconSize(QtCore.QSize(25, 25))')
@@ -394,6 +426,9 @@ class Raspili_menya_bolgarkoj(QWidget):
             pass
 
     def loshad(self, k):
+        pygame.mixer.music.load("C:/Users/Andrey/Desktop/tresk.mp3")
+        pygame.mixer.music.play()
+
         if self.a == 0:
             exec(f'self.kurva{k}.setIcon(QtGui.QIcon(self.ab))')
             exec(f'self.kurva{k}.setIconSize(QtCore.QSize(25, 25))')
@@ -435,30 +470,11 @@ class Raspili_menya_bolgarkoj(QWidget):
                 print('Шаурма')
             if self.a == 1:
                 print('АБ')
-                
-                self.close()
-                
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Raspili_menya_bolgarkoj()
-    ex.show()
-    sys.exit(app.exec())
-
-
-
 
 
 class VideoPlayer(QMainWindow):
-
     def __init__(self):
         super().__init__()
-        pygame.mixer.init()
-        pygame.mixer.music.load("C:/Users/Andrey/Desktop/und.mp3")
-        pygame.mixer.music.play()
-
-        self.setWindowTitle("Video Player")
-        self.setGeometry(100, 100, 1024, 768)
-
         layout = QVBoxLayout()
         self.media_player = QMediaPlayer()
         self.video_widget = QVideoWidget()
@@ -467,13 +483,14 @@ class VideoPlayer(QMainWindow):
         self.media_player.setVideoOutput(self.video_widget)
         self.media_player.play()
         layout.addWidget(self.video_widget)
-        container.setLayout(self.video_widget)
+        container.setLayout(layout)
         self.setCentralWidget(container)
-
+        self.w1 = VideoPlayer()
+        self.w1.show()
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = VideoPlayer()
+    ex = Raspili_menya_bolgarkoj()
     ex.show()
     sys.exit(app.exec())
