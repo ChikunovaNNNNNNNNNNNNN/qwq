@@ -17,7 +17,45 @@ from PyQt6.QtWidgets import QMainWindow, QApplication, QLabel
 d = 100
 
 
-class Raspili_menya_bolgarkoj(QWidget):
+class Kirpich(QMainWindow):
+    def __init__(self):
+        super(Kirpich, self).__init__()
+
+        self.setWindowTitle("Video Player")
+        self.setGeometry(100, 100, 1024, 768)
+        self.media_player = QMediaPlayer()
+        self.media_player.setSource(QUrl.fromLocalFile("йцукен.mp4"))
+        self.video_widget = QVideoWidget()
+        self.media_player.setVideoOutput(self.video_widget)
+        self.media_player.setVideoOutput(self.video_widget)
+        layout = QVBoxLayout()
+        layout.addWidget(self.video_widget)
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+        self.media_player.play()
+
+
+class Sosiska(QMainWindow):
+    def __init__(self):
+        super(Sosiska, self).__init__()
+
+        self.setWindowTitle("Video Player")
+        self.setGeometry(100, 100, 1024, 768)
+        self.media_player = QMediaPlayer()
+        self.media_player.setSource(QUrl.fromLocalFile("qwwerty.mp4"))
+        self.video_widget = QVideoWidget()
+        self.media_player.setVideoOutput(self.video_widget)
+        self.media_player.setVideoOutput(self.video_widget)
+        layout = QVBoxLayout()
+        layout.addWidget(self.video_widget)
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+        self.media_player.play()
+
+
+class Raspili_menya_bolgarkoj(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -420,10 +458,14 @@ class Raspili_menya_bolgarkoj(QWidget):
                 print('020202020202002')
             if self.a == 0:
                 print('Шаурма')
+                self.dialog = Kirpich()
+                self.dialog.show()
+
             if self.a == 1:
                 print('АБ')
 
-            pass
+                self.dialog = Sosiska()
+                self.dialog.show()
 
     def loshad(self, k):
         pygame.mixer.music.load("C:/Users/Andrey/Desktop/tresk.mp3")
@@ -468,29 +510,21 @@ class Raspili_menya_bolgarkoj(QWidget):
                 print('020202020202002')
             if self.a == 0:
                 print('Шаурма')
+                self.dialog = Kirpich()
+                self.dialog.show()
+
             if self.a == 1:
                 print('АБ')
+                self.dialog = Sosiska()
+                self.dialog.show()
 
 
-class VideoPlayer(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        layout = QVBoxLayout()
-        self.media_player = QMediaPlayer()
-        self.video_widget = QVideoWidget()
-        container = QWidget()
-        self.media_player.setSource(QUrl.fromLocalFile("qwwerty.mp4"))
-        self.media_player.setVideoOutput(self.video_widget)
-        self.media_player.play()
-        layout.addWidget(self.video_widget)
-        container.setLayout(layout)
-        self.setCentralWidget(container)
-        self.w1 = VideoPlayer()
-        self.w1.show()
+def main():
+    app = QApplication(sys.argv)
+    main = Raspili_menya_bolgarkoj()
+    main.show()
+    sys.exit(app.exec())
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Raspili_menya_bolgarkoj()
-    ex.show()
-    sys.exit(app.exec())
+    main()
